@@ -5,7 +5,6 @@ import { IMeal } from "./models/IMeal";
 import { dogSearch, mealSearch } from "./Services/DogService";
 
 /* console.log(dog); */
-
 const imageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
 
