@@ -1,5 +1,6 @@
 //import axios from "axios";
 import "./../scss/style.scss";
+import { cursor } from "./models/functions";
 import { IDogResponse } from "./models/IDogResponse";
 import { IMeal } from "./models/IMeal";
 import { dogSearch, mealSearch } from "./Services/DogService";
@@ -10,8 +11,7 @@ import { dogSearch, mealSearch } from "./Services/DogService";
 /* console.log(dog); */
 const bigImageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
-
-//export const header = document.getElementById("header");
+window.addEventListener("mousemove", cursor);
 
 const createHtmlDog = async () => {
   if (bigImageContainer) {
@@ -77,6 +77,4 @@ const createHtmlFood = async () => {
 };
 
 await createHtmlFood();
-
-
 

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 #bigContainer {
@@ -92,16 +93,16 @@
         }
       }
     }
-    
-    .mouseHover{
-      @include mixin.mouseNav
-    }
 
   }
 
   nav {
     height: 10vh;
   }
+}
+
+#navMouse{
+  @include mixin.navMouse;
 }
 
 #imageBox {
