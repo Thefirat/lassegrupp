@@ -23,7 +23,6 @@ const createHtmlDog = async () => {
   dogs.push(dog);
 };
   for(let i = 0;i < dogs.length;i++){
-
     const imageContainer = document.createElement("div");
     const image = document.createElement("img");
     image.src = dogs[i].message;

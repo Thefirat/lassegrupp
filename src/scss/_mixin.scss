@@ -1,7 +1,6 @@
 @mixin center {
     display: flex;
     align-items: center;
-    justify-content: center;
     @content;
 }
 
@@ -10,6 +9,7 @@
     width: 4rem;
     height: 4rem;
     border: 1px solid black;
+    
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
