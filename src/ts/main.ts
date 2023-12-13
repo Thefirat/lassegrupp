@@ -49,6 +49,12 @@ const createHtmlFood = async () => {
   foodInstructions.innerHTML = food.strInstructions;
   newButton.innerHTML = "Ny rätt";
 
+  foodHeader.className = "foodHeader display-4";
+  foodCategory.className = "foodCategory display-6";
+  foodImage.className = "foodImage img-fluid";
+  foodInstructions.className = "foodInstructions";
+  newButton.className = "newButton btn btn-success";
+
   foodContainer?.appendChild(foodHeader);
   foodContainer?.appendChild(foodCategory);
   foodContainer?.appendChild(foodImage);

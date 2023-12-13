@@ -1,42 +1,94 @@
+@use "mixin";
+
+
+#bigContainer {
+  scroll-snap-type: y mandatory;
+  //scroll-snap-points-y: repeat(100vh);
+  height: 300vh;
+  overflow-y: scroll;
+}
+
 #header {
   height: 100vh;
   border: 1px solid black;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
 
-  #hero{
+  #hero {
     height: 90vh;
+    //@include mixin.center;
 
-    .heroContent{
+    .heroContent {
       border: 1px solid red;
       width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      #lasseImageContainer {
+        position: absolute;
+      }
+
+      #lasseImage {
+        position: absolute;
+        opacity: 100%;
+        // margin-top: 500px;
+        // margin-left: 500px;
+        width: 200px;
+        animation-name: animation2;
+        animation-duration: 3s;
+      }
+
+      #lassieImage {
+        position: absolute;
+        opacity: 0%;
+        // margin-top: 500px;
+        // margin-left: 500px;
+        width: 200px;
+        animation-name: animation1;
+        animation-duration: 3s;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        position: absolute;
+      }
     }
-  
+
   }
 
   nav {
     height: 10vh;
   }
+}
 
-  #imageBox {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+#imageBox {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
 
-  #imageContainer {
-    width: 600px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#imageContainer {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-    }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
   }
 }
+
 
 
 .listContainer {
@@ -61,4 +113,47 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
+
+
+// 
+
+
+
+
+@keyframes animation1 {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes animation2 {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
+
+
+.foodInstructions {
+  width: 950px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.newButton {
+  font-size: 36px;
+  padding: 1rem 2rem;
+  
 }
