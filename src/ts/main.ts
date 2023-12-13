@@ -8,23 +8,25 @@ import { dogSearch, mealSearch } from "./Services/DogService";
 //https://img-cdn.sfanytime.com/COVERM/6045355c-f4d3-43a3-b2da-9f81010f55fe_COVERM_SV.jpg?w=375&ar=0.692&fit=crop&fm=pjpg&s=ed4ecb05374c108f737f900613811653
 
 /* console.log(dog); */
-const imageContainer = document.getElementById("imageContainer");
+const bigImageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
 
 const createHtmlDog = async () => {
-  const dog: IDogResponse = await dogSearch();
-  if (imageContainer) {
-    imageContainer.innerHTML = "";
+  if (bigImageContainer) {
+    bigImageContainer.innerHTML = "";
   }
-
+  for(let i = 0;i < 5;i++){
+  const dog: IDogResponse = await dogSearch();
+  const imageContainer = document.createElement("div");
   const image = document.createElement("img");
   image.src = dog.message;
   
   image.alt = "dog";
-  imageContainer?.appendChild(image);
+  bigImageContainer?.appendChild(imageContainer);
+  imageContainer.appendChild(image);
 };
-
-setInterval(createHtmlDog, 5000);
+}
+setInterval(createHtmlDog, 10000);
 
 createHtmlDog();
 
@@ -35,6 +37,7 @@ const createHtmlFood = async () => {
   const foodContainer = document.getElementById("mainContent");
   if (foodContainer) {
     foodContainer.innerHTML = "";
+    foodContainer.className = "foodContainer";
   }
   const foodHeader = document.createElement("h2");
   const foodCategory = document.createElement("h5");
@@ -65,4 +68,7 @@ const createHtmlFood = async () => {
   });
 };
 
-createHtmlFood();
+await createHtmlFood();
+
+
+
