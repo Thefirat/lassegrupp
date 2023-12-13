@@ -4,6 +4,9 @@ import { IDogResponse } from "./models/IDogResponse";
 import { IMeal } from "./models/IMeal";
 import { dogSearch, mealSearch } from "./Services/DogService";
 
+//https://m.media-amazon.com/images/I/71bUZ1qlr5L.__AC_SX300_SY300_QL70_ML2_.jpg
+//https://img-cdn.sfanytime.com/COVERM/6045355c-f4d3-43a3-b2da-9f81010f55fe_COVERM_SV.jpg?w=375&ar=0.692&fit=crop&fm=pjpg&s=ed4ecb05374c108f737f900613811653
+
 /* console.log(dog); */
 const imageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
@@ -16,6 +19,7 @@ const createHtmlDog = async () => {
 
   const image = document.createElement("img");
   image.src = dog.message;
+  
   image.alt = "dog";
   imageContainer?.appendChild(image);
 };
@@ -26,7 +30,7 @@ createHtmlDog();
 
 const createHtmlFood = async () => {
   const food: IMeal = await mealSearch();
-  console.log(food);
+  //console.log(food);
   
   const foodContainer = document.getElementById("mainContent");
   if (foodContainer) {

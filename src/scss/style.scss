@@ -1,3 +1,64 @@
-#header{
+#header {
   height: 100vh;
+  border: 1px solid black;
+
+  #hero{
+    height: 90vh;
+
+    .heroContent{
+      border: 1px solid red;
+      width: 90%;
+    }
+  
+  }
+
+  nav {
+    height: 10vh;
+  }
+
+  #imageBox {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #imageContainer {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+  }
+}
+
+
+.listContainer {
+  // container på ul 
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  //border-bottom: 1px solid black;
+
+  a {
+    text-decoration: none;
+    color: black;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

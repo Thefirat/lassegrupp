@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repetition</title>
-  </head>
-  <body>
-    <header id="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repetition</title>
+</head>
+
+<body>
+  <header id="header">
+    <nav>
+      <ul class="listContainer">
+        <li><a href="#">Home</a></li>
+        <li><a href="#mainContent">Page 2</a></li>
+        <li>Page 3</li>
+      </ul>
+    </nav>
+    <section id="hero">
+      <div class="heroContent">
+        <h1 id="Lasse">Lasse</h1>
+        <h1 id="Lassie">Lassie</h1>
+        <img src="./src/img/lasse_stor.jpg" alt="">
+        <img src="./src/img/image.png" alt="">
+        <!-- <button>Transform</button> -->
+      </div>
+    </section>
+    <!--     <div id="imageBox"> 
       <div id="imageContainer"></div>
-    </header>
-    <main id="main">
-      <section id="mainContent"></section>
-      <section id="apiContent"></section>
-    </main>
-    <script type="module" src="/src/ts/main.ts"></script>
-  </body>
+    </div> -->
+  </header>
+  <main id="main">
+    <section id="mainContent"></section>
+    <section id="apiContent"></section>
+
+    <div id="imageBox">
+      <div id="imageContainer"></div>
+    </div>
+  </main>
+  <script type="module" src="/src/ts/main.ts"></script>
+</body>
+
 </html>
