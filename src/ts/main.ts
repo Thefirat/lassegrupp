@@ -11,21 +11,29 @@ import { dogSearch, mealSearch } from "./Services/DogService";
 const bigImageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
 
+//export const header = document.getElementById("header");
+
 const createHtmlDog = async () => {
   if (bigImageContainer) {
     bigImageContainer.innerHTML = "";
   }
+  let dogs:IDogResponse[] = [];
   for(let i = 0;i < 5;i++){
   const dog: IDogResponse = await dogSearch();
-  const imageContainer = document.createElement("div");
-  const image = document.createElement("img");
-  image.src = dog.message;
-  
-  image.alt = "dog";
-  bigImageContainer?.appendChild(imageContainer);
-  imageContainer.appendChild(image);
+  dogs.push(dog);
 };
+  for(let i = 0;i < dogs.length;i++){
+
+    const imageContainer = document.createElement("div");
+    const image = document.createElement("img");
+    image.src = dogs[i].message;
+    
+    image.alt = "dog";
+    bigImageContainer?.appendChild(imageContainer);
+    imageContainer.appendChild(image);
+  }
 }
+
 setInterval(createHtmlDog, 10000);
 
 createHtmlDog();
