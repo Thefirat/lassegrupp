@@ -3,10 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 body {
   background-color: rgba($color: #000000, $alpha: 0.2);
 }
+
 
 #bigContainer {
   // scroll-snap-type: y mandatory;
@@ -15,11 +17,57 @@ body {
   // overflow-y: auto;
 }
 
+#navMouse{
+  @include mixin.navMouse;
+}
+
+
 #header {
   height: 100vh;
   border: 1px solid rgba($color: #000000, $alpha: 0.2);
   // scroll-snap-stop: always;
   // scroll-snap-align: start;
+
+  nav {
+    height: 10vh;
+    border: 1px solid black;
+    //background: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    cursor: pointer;
+    @include mixin.center;
+    justify-content: center;
+
+    .listContainer {
+      // container på ul 
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      flex: 1;
+
+      li{
+        background-color: rgb(112, 112, 233);
+        padding: 1rem;
+        border-radius: 20px;
+        font-size: 20px;
+        //position: relative;
+        //z-index: -2;
+        transition: all .2s ease-in-out;
+        &:hover{
+          background-color: rgb(75, 75, 230);;
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        /* &:hover {
+          text-decoration: underline;
+        } */
+      }
+    }
+
+  }
 
   #hero {
     height: 90vh;
@@ -55,7 +103,6 @@ body {
         // animation-duration: 3s;
         // animation-iteration-count: infinite;
         // animation-direction: alternate;
-
         // animation-name: animation1;
         // animation-duration: 10s;
         // animation-iteration-count: infinite;
@@ -135,10 +182,6 @@ body {
     }
   }
 
-  nav {
-    height: 10vh;
-  }
-}
 
 #imageBox {
   height: 100vh;
