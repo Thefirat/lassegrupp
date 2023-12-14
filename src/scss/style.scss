@@ -25,11 +25,9 @@
 
   nav {
     height: 10vh;
-    //background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
-
-
     border: 1px solid black;
+    //background: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    cursor: pointer;
     @include mixin.center;
     justify-content: center;
 
@@ -37,7 +35,6 @@
       // container på ul 
       display: flex;
       justify-content: space-evenly;
-
       list-style: none;
       flex: 1;
 
@@ -52,11 +49,13 @@
         &:hover{
           background-color: rgb(75, 75, 230);;
           transform: scale(1.1);
+          cursor: pointer;
         }
       }
       a {
         text-decoration: none;
         color: white;
+        cursor: pointer;
         /* &:hover {
           text-decoration: underline;
         } */

@@ -7,3 +7,5 @@ export function cursor (e:MouseEvent): void{
         navMouse.classList.add("mouseHover");
     }
 }
+
+
