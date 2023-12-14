@@ -1,22 +1,25 @@
 @use "mixin";
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: rgba($color: #000000, $alpha: .2);
+}
 
 #bigContainer {
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   //scroll-snap-points-y: repeat(100vh);
-  height: 100%;
-  overflow-y: scroll;
+  // height: 100%;
+  // overflow-y: auto;
 }
 
 #header {
   height: 100vh;
-  border: 1px solid black;
-  scroll-snap-stop: always;
-  scroll-snap-align: start;
+  border: 1px solid rgba($color: #000000, $alpha: .2);
+  // scroll-snap-stop: always;
+  // scroll-snap-align: start;
 
   #hero {
     height: 90vh;
@@ -24,17 +27,19 @@
     //@include mixin.center;
 
     .heroContent {
-      border: 1px solid red;
+      border: 1px solid rgba($color: #000000, $alpha: .2);
       display: flex;
       justify-content: center;
       align-items: center;
 
       #lasseImageContainer {
         position: relative;
-        width: 60vw;
-        overflow:hidden;
+        width: 100vw;
+        overflow: hidden;
         height: 80vh;
-        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       #lasseImage {
@@ -43,60 +48,95 @@
         // margin-top: 500px;
         // margin-left: 500px;
         width: 100%;
+        object-fit: contain;
+        // height: 100%;
         //object-fit: cover;
-        animation-name: animation2;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+        // animation-name: animation2;
+        // animation-duration: 3s;
+        // animation-iteration-count: infinite;
+        // animation-direction: alternate;
 
+        // animation-name: animation1;
+        // animation-duration: 10s;
+        // animation-iteration-count: infinite;
+        // animation-direction: reverse;
+
+        animation: 10s ease-in-out 1s infinite alternate-reverse animation1;
       }
 
       #lassieImage {
         position: absolute;
-        opacity: 0%;
+
+        opacity: 100%;
         // margin-top: 500px;
         // margin-left: 500px;
         width: 100%;
-        animation-name: animation1;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
 
+        // animation-name: animation1;
+        // animation-duration: 10s;
+        // animation-iteration-count: infinite;
+
+        animation: 10s ease-in-out 1s infinite alternate animation1;
       }
 
       img {
         width: 100%;
         height: auto;
       }
-      #textContainer{
-        position: absolute;
-        margin-top: 1000px;
+      #textContainer {
+        position:absolute;
+        // background-color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        height: 3rem;
+        // font-weight: 900;
+        
+        
+        
+        // top: 45;
+        // left: 45;
+        color: whitesmoke;
+        
       }
       h1 {
-        position: absolute;
-        z-index: 1;
-        #lassie{
-          animation-name: animation1;
-          animation-duration: 3s;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
-          opacity: 0%;
-        }
+        font-size: 4rem;
+        // position: absolute;
 
-        #lasse{
-          animation-name: animation2;
-          animation-duration: 3s;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
-          opacity: 100%;
-        }
+        // z-index: 1;
+      }
+      // #lassie {
+      //   // animation-name: animation1;
+      //   // animation-duration: 10s;
+      //   // animation-iteration-count: infinite;
+
+      //   opacity: 100%;
+
+      //   animation: 10s ease-in-out 1s infinite alternate animation1;
+      // }
+
+      // #lasse {
+      //   // animation-name: animation1;
+      //   // animation-duration: 10s;
+      //   // animation-iteration-count: infinite;
+      //   // animation-direction: reverse;
+      //   opacity: 100%;
+
+      //   animation: 10s ease-in-out 1s infinite alternate-reverse animation1;
+      // }
+      #i {
+        animation: 10s ease-in-out .3s infinite alternate animation1;
+      
+      }
+      #e {
+        transform: translateX(0);
+        animation: 10s ease-in-out .3s infinite alternate animation2;
+        position:absolute;
+
       }
     }
-    
-    .mouseHover{
-      @include mixin.mouseNav
-    }
 
+    .mouseHover {
+      @include mixin.mouseNav;
+    }
   }
 
   nav {
@@ -110,28 +150,30 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  scroll-snap-stop: always;
-  scroll-snap-align: start;
+  // scroll-snap-stop: always;
+  // scroll-snap-align: start;
 }
 
 #imageContainer {
   width: 90vw;
-  height: auto;
+  height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  border: 1px solid rgba($color: #000000, $alpha: .2);
 
   img {
-    width: 100%;
+    width: 300px;
     height: auto;
     border-radius: 15px;
+    margin: 1rem;
   }
 }
 
-
-
 .listContainer {
-  // container på ul 
+  // container på ul
   display: flex;
   list-style: none;
   justify-content: space-evenly;
@@ -153,49 +195,58 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  scroll-snap-stop: always;
-  scroll-snap-align: start;
-    img {
-      height: 40%;
-    }
+  // scroll-snap-stop: always;
+  // scroll-snap-align: start;
+  img {
+    height: 40%;
+  }
 }
 
-
-// 
-
-
-
+//
 
 @keyframes animation1 {
   from {
-    opacity: 0%;
+    opacity: 100%;
   }
 
   to {
-    opacity: 100%;
+    opacity: 0%;
   }
 }
 
 @keyframes animation2 {
   from {
-    opacity: 100%;
+    transform:translateX(0) ;
   }
 
   to {
-    opacity: 0%;
+    transform:translateX(-1rem) ;
   }
 }
-
+.foodContainer{
+  border: 1px solid rgba($color: #000000, $alpha: .2);
+  padding: 2rem;
+img{
+  width: 100%;
+  object-fit: cover;
+  @media screen and (min-width:1200px){
+    width:50%
+  }
+}
+}
 
 
 .foodInstructions {
   width: 90vw;
   margin-top: 20px;
   font-size: 16px;
+  overflow-y: auto;
+  @media all and (min-width:1200px){
+max-width: 50%;
+  }
 }
 
 .newButton {
-  font-size: 36px;
+  font-size: 1.5rem;
   padding: 1rem 2rem;
-  
 }
