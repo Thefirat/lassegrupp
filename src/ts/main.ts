@@ -7,6 +7,13 @@ import { dogSearch, mealSearch } from "./Services/DogService";
 //https://m.media-amazon.com/images/I/71bUZ1qlr5L.__AC_SX300_SY300_QL70_ML2_.jpg
 //https://img-cdn.sfanytime.com/COVERM/6045355c-f4d3-43a3-b2da-9f81010f55fe_COVERM_SV.jpg?w=375&ar=0.692&fit=crop&fm=pjpg&s=ed4ecb05374c108f737f900613811653
 
+const handleBrokenImage = (event: Event) => {
+  const placeholderImage = "https://pixabay.com/get/g4e3ac3ce7c26c1a31a47c6dabf723df0e24429fab74ec209d5dc1fd3cd169e88c0a9a96013c5e94bd869b8510eddfe1ca4c3af9ae9d50deb2019d299fd70ac8178267450a56abdad7bc8dc234beab8d6_640.jpg"
+  const target = event.target as HTMLImageElement;
+  if (target) {
+    target.src = placeholderImage;
+  }
+};
 /* console.log(dog); */
 const bigImageContainer = document.getElementById("imageContainer");
 /* const header = document.getElementById("header"); */
@@ -26,9 +33,12 @@ const createHtmlDog = async () => {
 
     const imageContainer = document.createElement("div");
     const image = document.createElement("img");
+
+    image.addEventListener("error", handleBrokenImage);
+
     image.src = dogs[i].message;
-    
     image.alt = "dog";
+
     bigImageContainer?.appendChild(imageContainer);
     imageContainer.appendChild(image);
   }
