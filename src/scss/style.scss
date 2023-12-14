@@ -32,7 +32,6 @@ body {
     height: 10vh;
     border: 1px solid black;
     //background: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-    cursor: pointer;
     @include mixin.center;
     justify-content: center;
 
@@ -54,13 +53,11 @@ body {
         &:hover{
           background-color: rgb(75, 75, 230);;
           transform: scale(1.1);
-          cursor: pointer;
         }
       }
       a {
         text-decoration: none;
         color: white;
-        cursor: pointer;
         /* &:hover {
           text-decoration: underline;
         } */
